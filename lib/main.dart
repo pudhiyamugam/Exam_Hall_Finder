@@ -29,36 +29,36 @@ class HomePage extends StatelessWidget {
         style: TextStyle(color: Colors.white),),
         backgroundColor: Color.fromARGB(255, 130, 6, 207),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child: Icon(Icons.home),
-      ),
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => SecondPage(),
-                  ),
-                );
-              },
-              child: Text('FIND SEAT'),
-            ),
-            SizedBox(width: 10),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => PathImages(),
-                  ),
-                );
-              },
-              child: Text('GEC PATH'),
-            )
-          ],
+      body: Align(
+        alignment: Alignment.topCenter,
+        child: Padding(
+          padding: const EdgeInsets.all(50.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => SecondPage(),
+                    ),
+                  );
+                },
+                child: Text('FIND SEAT'),
+              ),
+              SizedBox(width: 10),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => PathImages(),
+                    ),
+                  );
+                },
+                child: Text('GEC PATH'),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -7,7 +7,9 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Find your Exam Hall'),
+        title: Text('Find your Exam Hall',
+        style: TextStyle(color: Colors.white),),
+        backgroundColor: Color.fromARGB(255, 130, 6, 207),
       ),
       body: Center(
         child: TextExample(),
@@ -40,24 +42,33 @@ class _TextExampleState extends State<TextExample> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: TextField(
-          controller: _controller,
-          onSubmitted: (String value){
-            showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                title: Text('You have entered:'),
-                content: Text(value),
-                actions: [
-                  ElevatedButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: Text('OK'),
+      body: Align(
+        alignment: Alignment.topCenter,
+        child: Padding(
+          padding: const EdgeInsets.all(50.0),
+          child: SizedBox(
+            width: 250,
+            child: TextField(
+              controller: _controller,
+              onSubmitted: (String value){
+                showDialog(
+                  context: context,
+                  builder: (context) => AlertDialog(
+                    title: Text('You have entered:'),
+                    content: Text(value),
+                    actions: [
+                      ElevatedButton(
+                        onPressed: () => Navigator.pop(context),
+                        child: Text('OK'),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            );
-          },
+                );
+              },
+              decoration: InputDecoration(border: OutlineInputBorder(),
+              labelText: 'REG_NO'),
+            ),
+          ),
         ),
       ),
     );

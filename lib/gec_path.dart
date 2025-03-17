@@ -1,13 +1,33 @@
 import 'package:flutter/material.dart';
 
-class PathImages extends StatefulWidget {
+class PathImages extends StatelessWidget {
   const PathImages({super.key});
 
   @override
-  State<PathImages> createState() => _PathImagesState();
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          title: Text(
+            'Path To Exam Hall',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Color.fromARGB(255, 130, 6, 207),
+        ),
+      body: Center(
+        child: PathImagesclass(),
+      ),
+    );
+  }
 }
 
-class _PathImagesState extends State<PathImages> {
+class PathImagesclass extends StatefulWidget {
+  const PathImagesclass({super.key});
+
+  @override
+  State<PathImagesclass> createState() => _PathImagesclassState();
+}
+
+class _PathImagesclassState extends State<PathImagesclass> {
   final List<String> images = [
     'assets/img_1.png',
     'assets/img_2.png',
@@ -25,14 +45,8 @@ class _PathImagesState extends State<PathImages> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Path To Exam Hall',
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Color.fromARGB(255, 130, 6, 207),
-        ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
