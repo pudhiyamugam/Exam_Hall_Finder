@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 
 class PathImages extends StatelessWidget {
   const PathImages({super.key});
@@ -7,14 +8,24 @@ class PathImages extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text(
-            'Path To Exam Hall',
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Color.fromARGB(255, 130, 6, 207),
+        title: Text(
+          'Path To Exam Hall',
+          style: TextStyle(color: Colors.white),
         ),
+        backgroundColor: Color.fromARGB(255, 130, 6, 207),
+      ),
       body: Center(
         child: PathImagesclass(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => HomePage(),
+            ),
+          );
+        },
+        child: Icon(Icons.home),
       ),
     );
   }
@@ -51,7 +62,8 @@ class _PathImagesclassState extends State<PathImagesclass> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (images.isNotEmpty)
-              Image.asset(height: 300, images[currentindex], fit: BoxFit.contain),
+              Image.asset(
+                  height: 300, images[currentindex], fit: BoxFit.contain),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: Text(texts[currentindex]),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({super.key});
@@ -13,6 +14,16 @@ class SecondPage extends StatelessWidget {
       ),
       body: Center(
         child: TextExample(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => HomePage(),
+            ),
+          );
+        },
+        child: Icon(Icons.home),
       ),
     );
   }
@@ -58,7 +69,8 @@ class _TextExampleState extends State<TextExample> {
                     content: Text(value),
                     actions: [
                       ElevatedButton(
-                        onPressed: () => Navigator.pop(context),
+                        onPressed: (){Navigator.pop(context);
+                        print(value);},
                         child: Text('OK'),
                       ),
                     ],
