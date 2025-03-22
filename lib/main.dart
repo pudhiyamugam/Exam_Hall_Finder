@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
                 child: Text('FIND SEAT'),
               ),
               SizedBox(width: 10),
-              TextButton(
+              ElevatedButton(
                 onPressed: () async{
 var url = Uri.https(
   'app.mappedin.com', 

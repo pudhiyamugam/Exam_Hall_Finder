@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+    namespace "com.example.flutter_application_1" // Replace with your app's package name
     compileSdkVersion 33 // Updated method name for consistency
     defaultConfig {
         minSdkVersion 21 // Minimum SDK version for compatibility
